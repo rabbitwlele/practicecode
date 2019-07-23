@@ -1,4 +1,4 @@
-package main
+package test
 
 func shortestAlternatingPaths(n int, red_edges [][]int, blue_edges [][]int) []int {
 	const max = 19999999
