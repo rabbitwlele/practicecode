@@ -4,7 +4,7 @@ import java.util.List;
 class Solution {
     public int[] gardenNoAdj(int N, int[][] paths) {
         int[] colors = new int[N];
-        List<Integer>[] map =  new List[N];
+        List<Integer>[] map = new List[N];
         for (int i = 0; i < N; i++) {
             map[i] = new ArrayList<Integer>();
         }
