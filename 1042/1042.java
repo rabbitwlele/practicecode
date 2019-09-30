@@ -34,11 +34,4 @@ class Solution {
         return colors;
     }
 
-    
-
-    public static void main(String args[]) {
-        // System.out.println("xxx");
-        Solution s = new Solution();
-        System.out.println(s.gardenNoAdj(4, new int[][] { new int[] { 1, 2 },{2,3},{1,3},{1,4},{2,4},{3,4} }));
-    }
 }
