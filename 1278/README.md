@@ -1,5 +1,5 @@
 # Palindrome Partitioning III
-[分隔会文串](https://leetcode.com/problems/palindrome-partitioning-iii/)
+[分隔回文串](https://leetcode.com/problems/palindrome-partitioning-iii/)
 > 给你一个字符串，将该字符串分成k份，可以将任意一个字符串替换，保证每一份都是回文串。求最小的替换次数
 
 ## 分析
