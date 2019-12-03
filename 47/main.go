@@ -6,7 +6,30 @@ import (
 )
 
 func main() {
-	fmt.Println(permuteUnique([]int{1, 2, 1, 1, 1, 1, 1, 2}))
+	x := permuteUnique1([]int{-1, -1, 1, 1, 2, 2, -1})
+
+	for _, arr := range x {
+		cnt := 0
+		for _, arr1 := range x {
+			if equal(arr, arr1) {
+				cnt++
+			}
+		}
+		if cnt > 1 {
+			fmt.Println(arr)
+		}
+	}
+	//	fmt.Println("000000000000")
+
+}
+
+func equal(a, b []int) bool {
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
 }
 
 func permuteUnique(nums []int) [][]int {
@@ -40,4 +63,27 @@ func dfs(input []int, idx int, idxs []int, output []int, ret *[][]int) {
 			idxs[idx] = 0
 		}
 	}
+}
+func permuteUnique1(nums []int) [][]int {
+	var ret [][]int
+	m := make(map[int]int)
+	for _, num := range nums {
+		m[num]++
+	}
+	var dfs func(int, []int)
+	dfs = func(level int, out []int) {
+		if level == len(nums) {
+			ret = append(ret, append([]int{}, out...))
+			return
+		}
+		for n, cnt := range m {
+			if cnt != 0 {
+				m[n]--
+				dfs(level+1, append(out, n))
+				m[n]++
+			}
+		}
+	}
+	dfs(0, []int{})
+	return ret
 }
