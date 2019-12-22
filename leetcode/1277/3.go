@@ -8,6 +8,12 @@ func countSquares(matrix [][]int) int {
 			matrix[i][j] += matrix[i][j-1]
 		}
 	}
+
+	for i := 1; i < len(matrix); i++ {
+		for j := 0; j < len(matrix[i]); j++ {
+			matrix[i][j] += matrix[i-1][j]
+		}
+	}
 	for i := 1; i < len(matrix); i++ {
 		for j := 0; j < len(matrix[i]); j++ {
 			matrix[i][j] += matrix[i-1][j]
