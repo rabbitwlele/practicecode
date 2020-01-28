@@ -27,7 +27,7 @@ func maxFreq(s string, maxLetters int, minSize int, maxSize int) int {
 			if flag[s[i-l]] == 0 {
 				delete(flag, s[i-l])
 			}
-			fmt.Println(flag)
+			//fmt.Println(flag)
 			if len(flag) <= maxLetters {
 				ret[s[i-l+1:i+1]]++
 			}
@@ -39,7 +39,7 @@ func maxFreq(s string, maxLetters int, minSize int, maxSize int) int {
 			x = cnt
 		}
 	}
-	fmt.Println(ret)
+	//fmt.Println(ret)
 
 	return x
 }
