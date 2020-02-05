@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Node struct {
 	data int
 	next *Node
@@ -9,6 +11,26 @@ var ringLinkList *Node
 var noRingLinkList *Node
 
 func IsRingList(node *Node) bool {
+	if node == nil {
+		return false
+	}
+	slow := node
+	fast := node
+
+	for fast.next != nil && fast.next.next != nil {
+		fast = fast.next.next
+		slow = slow.next
+		if fast.data == slow.data {
+			return true
+		}
+
+	}
+	return false
+}
+
+func main() {
+	fmt.Println(IsRingList(ringLinkList))
+	fmt.Println(IsRingList(noRingLinkList))
 }
 
 //初始化有环列表和无环列表
