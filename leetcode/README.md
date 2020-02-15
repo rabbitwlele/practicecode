@@ -17,3 +17,21 @@
 [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 
 - 买卖股票
+
+## DP字符串匹配
+
+- 10 正则表达式匹配
+- 72 编辑距离
+
+## 单调队列
+
+- 239 滑动窗口最大值
+- 84 柱状图中最大的矩形
+
+## 可以作为中间结论的题目
+
+- 1277 正方形面积
+
+## 并查集
+
+- 128 最长连续序列
