@@ -28,6 +28,33 @@ func IsRingList(node *Node) bool {
 	return false
 }
 
+func detectCycle(head *Node) *Node {
+	if head == nil {
+		return nil
+	}
+	cycle := false
+	fast, low := head, head
+	for fast.next != nil && fast.next.next != nil {
+		fast = fast.next.next
+		low = low.next
+		if fast == low {
+			cycle = true
+			break
+		}
+	}
+
+	if !cycle {
+		return nil
+	}
+
+	low = head
+	for low != fast {
+		low = low.next
+		fast = fast.next
+	}
+	return low
+}
+
 func main() {
 	fmt.Println(IsRingList(ringLinkList))
 	fmt.Println(IsRingList(noRingLinkList))
